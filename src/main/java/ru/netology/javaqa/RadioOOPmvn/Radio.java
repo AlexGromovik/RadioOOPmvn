@@ -1,5 +1,13 @@
 package ru.netology.javaqa.RadioOOPmvn;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
 public class Radio {
     private int minStation = 0; // переменная ниаменьшей радоистнации
     private int maxStation= 9; // переменная ниавысшей радиостанции
@@ -8,14 +16,17 @@ public class Radio {
     private int maxVolume = 100; // переменная максимального уровня грмокости
     private int currentVolume = minVolume; // переменная текущего уровня громкости
 
-    public Radio (){ // Конструктор без указания параметров
-        System.out.println("Что новый хозяин желает ");
-    }
-
     public Radio (int size){ // Конструктор с определением диапазона количества радиостанций в радиоприемнике
         maxStation = minStation + size;
 
         System.out.println("Всего радиостанций " + maxStation);
+    }
+
+    public Radio(int minStation, int maxStation, int currentStation){ // Конструктор без указания параметров
+        this.minStation = minStation;
+        this.maxStation = maxStation;
+        this.currentStation = currentStation;
+        System.out.println("Что новый хозяин желает?");
     }
 
     public int getMinStation(){

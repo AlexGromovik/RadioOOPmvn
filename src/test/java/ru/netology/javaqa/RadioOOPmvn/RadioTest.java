@@ -7,7 +7,7 @@ public class RadioTest {
 
     @Test
     public void workingTest(){
-        Radio radio = new Radio();
+        Radio radio = new Radio(0,9,0);
     }
 
     @Test
