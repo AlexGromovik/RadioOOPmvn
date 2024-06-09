@@ -8,70 +8,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class Radio {
-    private int minStation = 0; // переменная ниаменьшей радоистнации
-    private int maxStation= 9; // переменная ниавысшей радиостанции
+    private int minStation; // переменная ниаменьшей радоистнации
+    private int maxStation; // переменная ниавысшей радиостанции
     private int currentStation = minStation; // переменная текущей радиостанции
-    private int minVolume = 0; // переменная минимального уровня громкости
-    private int maxVolume = 100; // переменная максимального уровня грмокости
+    private int minVolume; // переменная минимального уровня громкости
+    private int maxVolume; // переменная максимального уровня грмокости
     private int currentVolume = minVolume; // переменная текущего уровня громкости
 
 
-    public Radio(int minStation, int maxStation, int currentStation) {
-        this.minStation = minStation;
-        this.maxStation = maxStation;
-        this.currentStation = currentStation;
-    }
-
-
-
-    public int getMinStation() {
-        return minStation;
-    }
-
-    public void setMinStation(int minStation) {
-        this.minStation = minStation;
-    }
-
-    public int getMaxStation() {
-        return maxStation;
-    }
-
-    public void setMaxStation(int maxStation) {
-        this.maxStation = maxStation;
-    }
-
-    public int getCurrentStation() {
-        return currentStation;
-    }
-
-    public void setCurrentStation(int currentStation) {
-        this.currentStation = currentStation;
-    }
-
-    public int getMinVolume() {
-        return minVolume;
-    }
-
-    public void setMinVolume(int minVolume) {
-        this.minVolume = minVolume;
-    }
-
-    public int getMaxVolume() {
-        return maxVolume;
-    }
-
-    public void setMaxVolume(int maxVolume) {
-        this.maxVolume = maxVolume;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
-    public void setCurrentVolume(int currentVolume) {
-        this.currentVolume = currentVolume;
-    }
-
+//    public Radio(int minStation, int maxStation, int currentStation) {
+//        this.minStation = minStation;
+//        this.maxStation = maxStation;
+//        this.currentStation = currentStation;
+//    }
     //    public Radio(int minStation, int maxStation, int currentStation, int minVolume, int maxVolume, int currentVolume) {
 //        this.minStation = minStation;
 //        this.maxStation = maxStation;

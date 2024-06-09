@@ -6,15 +6,85 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
-    public void test2(){
-        Radio radio = new Radio(0, 9, 0);
-
-        Assertions.assertEquals(0,radio.getMinStation());
-        Assertions.assertEquals(9, radio.getMaxStation());
-        Assertions.assertEquals(0, radio.getCurrentStation());
+    public void shouldWorkConstructor(){
+        Radio radio = new Radio();
     }
 
+    @Test
+    void getMinStation() {
+    }
+
+    @Test
+    void getMaxStation() {
+    }
+
+    @Test
+    void getCurrentStation() {
+    }
+
+    @Test
+    void getMinVolume() {
+    }
+
+    @Test
+    void getMaxVolume() {
+    }
+
+    @Test
+    void getCurrentVolume() {
+    }
+
+    @Test
+    void setMinStation() {
+    }
+
+    @Test
+    void setMaxStation() {
+    }
+
+    @Test
+    void setCurrentStation() {
+    }
+
+    @Test
+    void setMinVolume() {
+    }
+
+    @Test
+    void setMaxVolume() {
+    }
+
+    @Test
+    void setCurrentVolume() {
+    }
+
+    @Test
+    void testEquals() {
+    }
+
+    @Test
+    void canEqual() {
+    }
+
+    @Test
+    void testHashCode() {
+    }
+
+    @Test
+    void testToString() {
+    }
+
+
 //    @Test
+//    public void test2(){
+//        Radio radio = new Radio(0, 9, 0);
+//
+//        Assertions.assertEquals(0,radio.getMinStation());
+//        Assertions.assertEquals(9, radio.getMaxStation());
+//        Assertions.assertEquals(0, radio.getCurrentStation());
+//    }
+
+  //    @Test
 //    public void shouldWorkNewConstructorCreateByLombok(){
 //        Radio radio = new Radio(0,9,0,0,100,0);
 //
