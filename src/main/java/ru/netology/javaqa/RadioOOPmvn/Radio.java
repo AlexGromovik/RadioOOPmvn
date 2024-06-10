@@ -1,33 +1,72 @@
 package ru.netology.javaqa.RadioOOPmvn;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Radio {
-    private int currentStation; // переменная текущей радиостанции
-    private int currentVolume; // переменная текущей громкости
+    private int minStation = 0; // переменная ниаменьшей радоистнации
+    private int maxStation = 9; // переменная ниавысшей радиостанции
+    private int currentStation = minStation; // переменная текущей радиостанции
+    private int minVolume = 0; // переменная минимального уровня громкости
+    private int maxVolume = 100; // переменная максимального уровня грмокости
+    private int currentVolume = minVolume; // переменная текущего уровня громкости
 
+    public Radio (int size){ // Конструктор с определением диапазона количества радиостанций в радиоприемнике
+        maxStation = minStation + size;
 
-    public int getCurrentStation() { // Геттер радиостанции
-        return currentStation;
+        System.out.println("Всего радиостанций " + maxStation);
     }
 
-    public int getCurrentVolume() { // Геттер громкости
-        return currentVolume;
+    public Radio(int minStation, int maxStation, int currentStation){ // Конструктор без указания параметров
+        this.minStation = minStation;
+        this.maxStation = maxStation;
+        this.currentStation = currentStation;
+        System.out.println("Что новый хозяин желает?");
     }
 
+//    public int getMinStation(){
+//        return minStation;
+//    }
+//
+//    public int getMaxStation(){
+//        return maxStation;
+//    }
+//
+//    public int getCurrentStation(){
+//        return currentStation;
+//    }
+//
+//    public int getMinVolume(){
+//        return minVolume;
+//    }
+//
+//    public int getMaxVolume(){
+//        return maxVolume;
+//    }
+//
+//    public int getCurrentVolume() { // Геттер громкости
+//        return currentVolume;
+//    }
+//
     public void setCurrentStation(int newCurrentStation) { // настройка радиостанции
-        if (newCurrentStation < 0) {
+        if (newCurrentStation < getMinStation()) {
             return;
         }
-        if (newCurrentStation > 9) {
+        if (newCurrentStation > getMaxStation()) {
             return;
         }
         currentStation = newCurrentStation;
     }
 
     public void setCurrentVolume(int newCurrentVolume) { // настройка громкости
-        if (newCurrentVolume < 0) {
+        if (newCurrentVolume < getMinVolume()) {
             return;
         }
-        if (newCurrentVolume > 100) {
+        if (newCurrentVolume > getMaxVolume()) {
             return;
         }
         currentVolume = newCurrentVolume;
@@ -35,34 +74,35 @@ public class Radio {
 
     public void nextStation() { // переключение на следующую радиостанцию
 
-        if (currentStation < 9) {
+        if (currentStation < getMaxStation()) {
             currentStation = currentStation + 1;
         } else {
-            currentStation = 0;
+            currentStation = getMinStation();
         }
+        System.out.println("Следующая радиостанция № " + currentStation);
     }
 
     public void prevStation() { // переключение на предыдущую радиостанцию
 
-        if (currentStation > 0) {
+        if (currentStation > getMinStation()) {
             currentStation = currentStation - 1;
         } else {
-            currentStation = 9;
+            currentStation = getMaxStation();
         }
+        System.out.println("Следующая радиостанция № " + currentStation);
     }
 
     public void volumeUp() { // увеличение громкости
 
-        if (currentVolume < 100) {
+        if (currentVolume < getMaxVolume()) {
             currentVolume = currentVolume + 1;
         }
     }
 
     public void volumeDown() { // уменьшение громкости
 
-        if (currentVolume > 0) {
+        if (currentVolume > getMinVolume()) {
             currentVolume = currentVolume - 1;
         }
     }
 }
-

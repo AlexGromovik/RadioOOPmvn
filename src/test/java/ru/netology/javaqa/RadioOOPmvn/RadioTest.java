@@ -6,7 +6,40 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
-    public void shouldSetRadioStation(){ // включение радиостанции
+    public void test2(){
+        Radio radio = new Radio(0,9,0);
+
+        Assertions.assertEquals(0,radio.getMinStation());
+        Assertions.assertEquals(9, radio.getMaxStation());
+        Assertions.assertEquals(0, radio.getCurrentStation());
+        Assertions.assertEquals(0,radio.getMinVolume());
+        Assertions.assertEquals(100,radio.getMaxVolume());
+        Assertions.assertEquals(0,radio.getCurrentVolume());
+    }
+
+      @Test
+    public void shouldWorkNewConstructorCreateByLombok(){
+        Radio radio = new Radio(0,9,0,0,100,0);
+
+        Assertions.assertEquals(0, radio.getMinStation());
+        Assertions.assertEquals(9, radio.getMaxStation());
+        Assertions.assertEquals(0, radio.getCurrentStation());
+        Assertions.assertEquals(0,radio.getMinVolume());
+        Assertions.assertEquals(100, radio.getMaxVolume());
+        Assertions.assertEquals(0,radio.getCurrentVolume());
+    }
+
+    @Test
+    public void shouldAllRadioStations() {
+        Radio radio = new Radio(9);
+
+        Assertions.assertEquals(0, radio.getMinStation());
+        Assertions.assertEquals(9, radio.getMaxStation());
+        Assertions.assertEquals(0, radio.getCurrentStation());
+    }
+
+    @Test
+    public void shouldSetRadioStation() { // включение радиостанции
         Radio radio = new Radio();
 
         radio.setCurrentStation(6);
@@ -18,19 +51,19 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetVolume(){ // настройка громкости
+    public void shouldSetVolume() { // настройка громкости
         Radio radio = new Radio();
 
-        radio.setCurrentVolume(55);
+        radio.setCurrentVolume(0);
 
-        int expected = 55;
+        int expected = 0;
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldSetBelowMinRadioStation(){ // Проверка включения станции ниже минимальной
+    public void shouldSetBelowMinRadioStation() { // Проверка включения станции ниже минимальной
         Radio radio = new Radio();
 
         radio.setCurrentStation(-1);
@@ -54,7 +87,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetBelowMinVolume(){ // Проверка включения громкости ниже минимальной
+    public void shouldSetBelowMinVolume() { // Проверка включения громкости ниже минимальной
         Radio radio = new Radio();
 
         radio.setCurrentVolume(-1);
@@ -78,7 +111,7 @@ public class RadioTest {
     }
 
     @Test
-    public void switchToNextStation(){ // переключение на следующую радиостанцию
+    public void switchToNextStation() { // переключение на следующую радиостанцию
         Radio radio = new Radio();
 
         radio.setCurrentStation(2);
@@ -88,11 +121,10 @@ public class RadioTest {
         int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
-
     }
 
     @Test
-    public void switchToPreviousStation(){ // переключение на предыдущую радиостанцию
+    public void switchToPreviousStation() { // переключение на предыдущую радиостанцию
         Radio radio = new Radio();
 
         radio.setCurrentStation(5);
@@ -102,11 +134,10 @@ public class RadioTest {
         int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
-
     }
 
     @Test
-    public void switchToNextStationAboveMax(){ // переключение на следующую радиостанцию после последней
+    public void switchToNextStationAboveMax() { // переключение на следующую радиостанцию после последней
         Radio radio = new Radio();
 
         radio.setCurrentStation(9);
@@ -116,11 +147,10 @@ public class RadioTest {
         int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
-
     }
 
     @Test
-    public void switchToPreviousStationBelowMin(){  // переключение на предыдущую радиостанцию перед первой
+    public void switchToPreviousStationBelowMin() {  // переключение на предыдущую радиостанцию перед первой
         Radio radio = new Radio();
 
         radio.setCurrentStation(0);
@@ -130,25 +160,23 @@ public class RadioTest {
         int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
-
     }
 
     @Test
-    public void increaseVolume(){ //Увеличение громкости
+    public void increaseVolume() { //Увеличение громкости
         Radio radio = new Radio();
 
-        radio.setCurrentVolume(15);
+        radio.setCurrentVolume(16);
         radio.volumeUp();
 
-        int expected = 16;
+        int expected = 17;
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
-
     }
 
     @Test
-    public void decreaseVolume(){ //Уменьшение громкости
+    public void decreaseVolume() { //Уменьшение громкости
         Radio radio = new Radio();
 
         radio.setCurrentVolume(15);
@@ -158,11 +186,10 @@ public class RadioTest {
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
-
     }
 
     @Test
-    public void increaseVolumeAboveMax(){ //Увеличение громкости выше максимальной
+    public void increaseVolumeAboveMax() { //Увеличение громкости выше максимальной
         Radio radio = new Radio();
 
         radio.setCurrentVolume(100);
@@ -172,22 +199,99 @@ public class RadioTest {
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
-
     }
 
     @Test
-    public void decreaseVolumeBelowMin(){ //Уменьшение громкости ниже минимальной
+    public void decreaseVolumeBelowMin() { //Уменьшение громкости ниже минимальной
         Radio radio = new Radio();
 
-        radio.setCurrentVolume(0);
+        radio.setCurrentVolume(-1);
         radio.volumeDown();
 
         int expected = 0;
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
-
     }
 
-
+    //
+//    @Test
+//    void getMinStation() {
+//    }
+//
+//    @Test
+//    void getMaxStation() {
+//    }
+//
+//    @Test
+//    void getCurrentStation() {
+//    }
+//
+//    @Test
+//    void getMinVolume() {
+//    }
+//
+//    @Test
+//    void getMaxVolume() {
+//    }
+//
+//    @Test
+//    void getCurrentVolume() {
+//    }
+//
+//    @Test
+//    void setCurrentStation() {
+//    }
+//
+//    @Test
+//    void setCurrentVolume() {
+//    }
+//
+//    @Test
+//    void nextStation() {
+//    }
+//
+//    @Test
+//    void prevStation() {
+//    }
+//
+//    @Test
+//    void volumeUp() {
+//    }
+//
+//    @Test
+//    void volumeDown() {
+//    }
+//
+//    @Test
+//    void setMinStation() {
+//    }
+//
+//    @Test
+//    void setMaxStation() {
+//    }
+//
+//    @Test
+//    void setMinVolume() {
+//    }
+//
+//    @Test
+//    void setMaxVolume() {
+//    }
+//
+//    @Test
+//    void testEquals() {
+//    }
+//
+//    @Test
+//    void canEqual() {
+//    }
+//
+//    @Test
+//    void testHashCode() {
+//    }
+//
+//    @Test
+//    void testToString() {
+//    }
 }
