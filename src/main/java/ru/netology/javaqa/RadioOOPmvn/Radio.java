@@ -28,30 +28,30 @@ public class Radio {
         System.out.println("Что новый хозяин желает?");
     }
 
-    public int getMinStation(){
-        return minStation;
-    }
-
-    public int getMaxStation(){
-        return maxStation;
-    }
-
-    public int getCurrentStation(){
-        return currentStation;
-    }
-
-    public int getMinVolume(){
-        return minVolume;
-    }
-
-    public int getMaxVolume(){
-        return maxVolume;
-    }
-
-    public int getCurrentVolume() { // Геттер громкости
-        return currentVolume;
-    }
-
+//    public int getMinStation(){
+//        return minStation;
+//    }
+//
+//    public int getMaxStation(){
+//        return maxStation;
+//    }
+//
+//    public int getCurrentStation(){
+//        return currentStation;
+//    }
+//
+//    public int getMinVolume(){
+//        return minVolume;
+//    }
+//
+//    public int getMaxVolume(){
+//        return maxVolume;
+//    }
+//
+//    public int getCurrentVolume() { // Геттер громкости
+//        return currentVolume;
+//    }
+//
     public void setCurrentStation(int newCurrentStation) { // настройка радиостанции
         if (newCurrentStation < getMinStation()) {
             return;
@@ -79,6 +79,7 @@ public class Radio {
         } else {
             currentStation = getMinStation();
         }
+        System.out.println("Следующая радиостанция № " + currentStation);
     }
 
     public void prevStation() { // переключение на предыдущую радиостанцию
@@ -88,6 +89,7 @@ public class Radio {
         } else {
             currentStation = getMaxStation();
         }
+        System.out.println("Следующая радиостанция № " + currentStation);
     }
 
     public void volumeUp() { // увеличение громкости

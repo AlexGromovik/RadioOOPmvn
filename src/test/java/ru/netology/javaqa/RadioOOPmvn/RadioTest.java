@@ -6,11 +6,6 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
-    public void shouldWorkConstructor(){
-        Radio radio = new Radio(0,9,0,0,100,0);
-    }
-
-    @Test
     public void test2(){
         Radio radio = new Radio(0,9,0);
 
@@ -219,83 +214,84 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
-    void getMinStation() {
-    }
-
-    @Test
-    void getMaxStation() {
-    }
-
-    @Test
-    void getCurrentStation() {
-    }
-
-    @Test
-    void getMinVolume() {
-    }
-
-    @Test
-    void getMaxVolume() {
-    }
-
-    @Test
-    void getCurrentVolume() {
-    }
-
-    @Test
-    void setCurrentStation() {
-    }
-
-    @Test
-    void setCurrentVolume() {
-    }
-
-    @Test
-    void nextStation() {
-    }
-
-    @Test
-    void prevStation() {
-    }
-
-    @Test
-    void volumeUp() {
-    }
-
-    @Test
-    void volumeDown() {
-    }
-
-    @Test
-    void setMinStation() {
-    }
-
-    @Test
-    void setMaxStation() {
-    }
-
-    @Test
-    void setMinVolume() {
-    }
-
-    @Test
-    void setMaxVolume() {
-    }
-
-    @Test
-    void testEquals() {
-    }
-
-    @Test
-    void canEqual() {
-    }
-
-    @Test
-    void testHashCode() {
-    }
-
-    @Test
-    void testToString() {
-    }
+    //
+//    @Test
+//    void getMinStation() {
+//    }
+//
+//    @Test
+//    void getMaxStation() {
+//    }
+//
+//    @Test
+//    void getCurrentStation() {
+//    }
+//
+//    @Test
+//    void getMinVolume() {
+//    }
+//
+//    @Test
+//    void getMaxVolume() {
+//    }
+//
+//    @Test
+//    void getCurrentVolume() {
+//    }
+//
+//    @Test
+//    void setCurrentStation() {
+//    }
+//
+//    @Test
+//    void setCurrentVolume() {
+//    }
+//
+//    @Test
+//    void nextStation() {
+//    }
+//
+//    @Test
+//    void prevStation() {
+//    }
+//
+//    @Test
+//    void volumeUp() {
+//    }
+//
+//    @Test
+//    void volumeDown() {
+//    }
+//
+//    @Test
+//    void setMinStation() {
+//    }
+//
+//    @Test
+//    void setMaxStation() {
+//    }
+//
+//    @Test
+//    void setMinVolume() {
+//    }
+//
+//    @Test
+//    void setMaxVolume() {
+//    }
+//
+//    @Test
+//    void testEquals() {
+//    }
+//
+//    @Test
+//    void canEqual() {
+//    }
+//
+//    @Test
+//    void testHashCode() {
+//    }
+//
+//    @Test
+//    void testToString() {
+//    }
 }
